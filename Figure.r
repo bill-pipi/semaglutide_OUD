@@ -2,7 +2,7 @@ library(forestplot)
 
 workdir <- "."
 #datafile <- file.path(workdir,"Figure1.csv")
-datafile <- file.path(workdir,"Supplement Results Figure 2.csv")
+datafile <- file.path(workdir,"Supplement_Results_Figure2.csv")
 
 data <- read.csv(datafile, stringsAsFactors=FALSE,row.names=NULL)
 
@@ -21,7 +21,7 @@ tabletext <- cbind(c("Size/group",data$casecount),
 )
 
 #pdf(file.path(workdir,"Figure1.pdf"),  onefile=FALSE, width=13, height=6.5)
-pdf(file.path(workdir,"Supplement Results Figure 2.pdf"),  onefile=FALSE, width=13, height=6.5)
+pdf(file.path(workdir,"Supplement_Results_Figure2.pdf"),  onefile=FALSE, width=13, height=6.5)
 
 forestplot(labeltext=tabletext, 
            graphwidth = unit(70, 'mm'),
