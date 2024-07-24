@@ -1,8 +1,8 @@
 library(forestplot)
 
 workdir <- "."
-datafile <- file.path(workdir,"Figure2a.csv")
-#datafile <- file.path(workdir,"Supplement Figure 2.csv")
+#datafile <- file.path(workdir,"Figure1.csv")
+datafile <- file.path(workdir,"Supplement Results Figure 2.csv")
 
 data <- read.csv(datafile, stringsAsFactors=FALSE,row.names=NULL)
 
@@ -20,8 +20,8 @@ tabletext <- cbind(c("Size/group",data$casecount),
                    c("        HR (95% CI)",data$CI)
 )
 
-pdf(file.path(workdir,"Figure2a.pdf"),  onefile=FALSE, width=13, height=6.5)
-#pdf(file.path(workdir,"Supplement Figure 2.pdf"),  onefile=FALSE, width=13, height=6.5)
+#pdf(file.path(workdir,"Figure1.pdf"),  onefile=FALSE, width=13, height=6.5)
+pdf(file.path(workdir,"Supplement Results Figure 2.pdf"),  onefile=FALSE, width=13, height=6.5)
 
 forestplot(labeltext=tabletext, 
            graphwidth = unit(70, 'mm'),
@@ -32,8 +32,8 @@ forestplot(labeltext=tabletext,
            mean=c(NA,data$RR), 
            lower=c(NA,data$down), upper=c(NA,data$up),
           
-          title ="12 month risk of opioid overdose in patients with comorbid T2DM and OUD\n(Comparision between matched semaglutide vs other anti-diabetic medications groups)", 
-          #title ="12 month risk of medical encounters for congenital malformations, deformations, and chromosomal abnormalities\n in patients with comorbid T2DM and OUD\n(Comparision between matched semaglutide vs other anti-diabetes medications groups)", 
+          #title ="12 month risk of opioid overdose in patients with comorbid T2DM and OUD\n(Comparision between matched semaglutide vs other anti-diabetic medications groups)", 
+          title ="12 month risk of medical encounters for congenital malformations, deformations, and chromosomal abnormalities\n in patients with comorbid T2DM and OUD\n(Comparision between matched semaglutide vs other anti-diabetes medications groups)", 
           
           
            xticks=log(c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,10)),
